@@ -70,14 +70,4 @@ $ npm run docker:down
 - [NestJS Authentication without Passport](https://trilon.io/blog/nestjs-authentication-without-passport)
 - [NestJS, Redis and Postgres local development with Docker Compose](https://www.tomray.dev/nestjs-docker-compose-postgres)
 
-## Author
-
-👤 **Anil Ahir**
-
-- Twitter: [@anilahir220](https://twitter.com/anilahir220)
-- Github: [@anilahir](https://github.com/anilahir)
-- LinkedIn: [@anilahir](https://www.linkedin.com/in/anilahir)
-
-## Show your support
- 
  

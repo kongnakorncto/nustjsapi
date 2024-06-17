@@ -1,13 +1,20 @@
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { AppModule } from '@src/app.module';
+import { TransformInterceptor } from '@src/common/interceptors/transform.interceptor';
+import { setupSwagger } from '@src/swagger';
+//import * as hbs from 'hbs';
+import * as hbs from 'express-handlebars';
+import { join } from 'path'; 
+import { printName } from '@src/hbs/helpers';
 
-import { AppModule } from './app.module';
-import { TransformInterceptor } from './common/interceptors/transform.interceptor';
-import { setupSwagger } from './swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(
+    AppModule,
+  );
 
   setupSwagger(app);
 
@@ -22,14 +29,16 @@ async function bootstrap() {
       validateCustomDecorators: true,
     }),
   );
-
+  
+  
+  app.useStaticAssets(join(__dirname, '@src', 'public'));
+  app.setBaseViewsDir(join(__dirname, '@src', 'views')); 
   const configService = app.get(ConfigService);
 
   const port = configService.get('PORT');
-
+ 
   await app.listen(port, () => {
     console.log(`Application running at ${port}`);
   });
 }
-
 bootstrap();

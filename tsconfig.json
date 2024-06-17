@@ -21,6 +21,9 @@
       "@public/*": ["./public/*"], 
       "@src/*": ["./src/*"],
       "@root/*": ["./*"],  
+      "@views/*": ["./views/*"],  
+      "@partials/*": ["./views/partials/*"],  
+      "@layouts/*": ["./views/layouts/*"],  
     }
   }
 }

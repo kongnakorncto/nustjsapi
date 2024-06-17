@@ -70,4 +70,5 @@ $ npm run docker:down
 - [NestJS Authentication without Passport](https://trilon.io/blog/nestjs-authentication-without-passport)
 - [NestJS, Redis and Postgres local development with Docker Compose](https://www.tomray.dev/nestjs-docker-compose-postgres)
 
- 
+ - npm audit fix --force
+ # roles
